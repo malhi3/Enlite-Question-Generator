@@ -1,40 +1,67 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Untitled Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Paper Generator</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 
 <body>
-<label for="select">Choose your subject:</label>
-<select name="select" id="selectSubject">
-  <option value="Biology">Biology</option>
-  <option value="Chemistry">Chemistry</option>
-  <option value="Physics">Physics</option>
-</select>
-	<h3>Number of questions</h3>
-	<input type="text" id="number">
-	<button onClick="randomiseQuestion();">Generate</button>
-<script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+  <div class="jumbotron">
+    <h1 class="display-3">Paper Generator</h1>
+
+  </div>
+
+  <div class="container">
+    <div class="row">
+
+      <label for="select">Choose your subject:</label>
+      <select name="subject" id="selectSubject">
+        <option value="Biology">Biology</option>
+        <option value="Chemistry">Chemistry</option>
+        <option value="Physics">Physics</option>
+      </select>
+
+
+      <label for="number">Number of questions</label>
+      <select name="number" id="selectNumber">
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="15">15</option>
+        <option value="20">20</option>
+        <option value="25">25</option>
+        <option value="30">30</option>
+      </select>
+
+      <button onClick="randomiseQuestion();">Generate</button>
+
+    </div>
+  </div>
+
+
+	
+  <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/4.13.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/4.13.0/firebase-storage.js"></script>
-	<table width="90%" border="1" style="border-collapse: collapse;" id="table">
-	  <tbody>
-	   
+  <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase-storage.js"></script>
+  	<table width="90%" id="table">
+  	  <tbody>
+  	   
       </tbody>
-</table>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyDUonM4xeVpbV2nWSV3RzMCdXtA8eeiDls",
-    authDomain: "igcse-topic-selector.firebaseapp.com",
-    databaseURL: "https://igcse-topic-selector.firebaseio.com",
-    projectId: "igcse-topic-selector",
-    storageBucket: "igcse-topic-selector.appspot.com",
-    messagingSenderId: "977671931749"
-  };
-  firebase.initializeApp(config);
-</script>
-<script src="question-generator.js"></script>
+  </table>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDUonM4xeVpbV2nWSV3RzMCdXtA8eeiDls",
+      authDomain: "igcse-topic-selector.firebaseapp.com",
+      databaseURL: "https://igcse-topic-selector.firebaseio.com",
+      projectId: "igcse-topic-selector",
+      storageBucket: "igcse-topic-selector.appspot.com",
+      messagingSenderId: "977671931749"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="question-generator.js"></script>
 </body>
 </html>

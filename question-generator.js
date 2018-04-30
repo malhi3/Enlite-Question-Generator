@@ -10,7 +10,7 @@ function randomiseQuestion(){
 	var subjectList = document.getElementById("selectSubject");
 	var subject = subjectList.options[subjectList.selectedIndex].text;
 	
-	var numberField = document.getElementById("number");
+	var numberField = document.getElementById("selectNumber");
 	var number = numberField.value;
 	
 	var arr = [];
@@ -19,7 +19,7 @@ function randomiseQuestion(){
     	if(arr.indexOf(randomNumber) > -1) {continue;}
     	arr[arr.length] = randomNumber;
 	}
-	window.alert(arr);
+	//window.alert(arr);
 	
 	for(var i=0; i<arr.length; i++){
 	 	var randomisedNumber = arr[i];
@@ -58,7 +58,7 @@ function addQuestion(increment, questionNo, parentTdId, parentTrId, incrementTdI
 	
 	storageRef.child('Paper2/'+subject+'/'+subject.slice(0, 4)+questionNo+'.png').getDownloadURL().then(function(url){
 		//window.alert("function");
-		window.alert(questionNo);
+		//window.alert(questionNo);
 		question.setAttribute("src", url);
 	});
 	
