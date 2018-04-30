@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+</head>
+
+<body>
+<label for="select">Choose your subject:</label>
+<select name="select" id="selectSubject">
+  <option value="Biology">Biology</option>
+  <option value="Chemistry">Chemistry</option>
+  <option value="Physics">Physics</option>
+</select>
+	<h3>Number of questions</h3>
+	<input type="text" id="number">
+	<button onClick="randomiseQuestion();">Generate</button>
+<script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.13.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.13.0/firebase-storage.js"></script>
+	<table width="90%" border="1" style="border-collapse: collapse;" id="table">
+	  <tbody>
+	   
+      </tbody>
+</table>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDUonM4xeVpbV2nWSV3RzMCdXtA8eeiDls",
+    authDomain: "igcse-topic-selector.firebaseapp.com",
+    databaseURL: "https://igcse-topic-selector.firebaseio.com",
+    projectId: "igcse-topic-selector",
+    storageBucket: "igcse-topic-selector.appspot.com",
+    messagingSenderId: "977671931749"
+  };
+  firebase.initializeApp(config);
+</script>
+<script src="question-generator.js"></script>
+</body>
+</html>
