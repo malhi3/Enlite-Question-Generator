@@ -4,39 +4,51 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Paper Generator</title>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
   <link rel="stylesheet" type="text/css" href="styles.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 
 <body>
-  <div class="jumbotron">
-    <h1 class="display-3">Paper Generator</h1>
-
+  <div class="container-fluid" id="lead">
+    <div class="row">
+      <h1 class="display-3">Paper Generator</h1>
+    </div>
   </div>
 
-  <div class="container">
+  <div class="container" id="options">
     <div class="row">
+      <div class="col-lg-4">
+        <label for="select">Choose your subject:</label>
+        <select name="subject" id="selectSubject">
+          <option value="Biology">Biology</option>
+          <option value="Chemistry">Chemistry</option>
+          <option value="Physics">Physics</option>
+        </select>
+      </div>
+      <div class="col-lg-4">
+        <label for="number">Number of questions</label>
+        <select name="number" id="selectNumber">
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="15">15</option>
+          <option value="20">20</option>
+          <option value="25">25</option>
+          <option value="30">30</option>
+        </select>
+      </div>
+      <div class="col-lg-4">
+        <button class="button button1"onClick="randomiseQuestion();">Generate</button>
+      </div>
+    </div>
+  </div>
 
-      <label for="select">Choose your subject:</label>
-      <select name="subject" id="selectSubject">
-        <option value="Biology">Biology</option>
-        <option value="Chemistry">Chemistry</option>
-        <option value="Physics">Physics</option>
-      </select>
-
-
-      <label for="number">Number of questions</label>
-      <select name="number" id="selectNumber">
-        <option value="5">5</option>
-        <option value="10">10</option>
-        <option value="15">15</option>
-        <option value="20">20</option>
-        <option value="25">25</option>
-        <option value="30">30</option>
-      </select>
-
-      <button onClick="randomiseQuestion();">Generate</button>
-
+  <div class="container" id="questions">
+    <div class="row">
+      <table width="90%" id="table">
+        <tbody>
+        </tbody>
+      </table>
     </div>
   </div>
 
@@ -45,11 +57,9 @@
   <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/4.13.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase-storage.js"></script>
-  	<table width="90%" id="table">
-  	  <tbody>
-  	   
-      </tbody>
-  </table>
+
+  
+
   <script>
     // Initialize Firebase
     var config = {
