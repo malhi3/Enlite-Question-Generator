@@ -12,23 +12,29 @@
 <body>
   <div class="container-fluid" id="lead">
     <div class="row">
-      <h1 class="display-3">Paper Generator</h1>
+      <h1 class="display-3" id="leadText">Paper Generator</h1>
+      <p id="leadDescription">by <img src="logo.png" alt="Enlite" id="leadImage"></p>
     </div>
   </div>
 
-  <div class="container" id="options">
+  <div class="container-fluid" id="options">
     <div class="row">
       <div class="col-lg-4">
         <label for="select">Choose your subject:</label>
-        <select name="subject" id="selectSubject">
+        <div class="select-style">
+          <select name="subject" id="selectSubject">
           <option value="Biology">Biology</option>
           <option value="Chemistry">Chemistry</option>
           <option value="Physics">Physics</option>
         </select>
+        </div>
       </div>
+
+
       <div class="col-lg-4">
         <label for="number">Number of questions</label>
-        <select name="number" id="selectNumber">
+        <div class="select-style">
+          <select name="number" id="selectNumber" >
           <option value="5">5</option>
           <option value="10">10</option>
           <option value="15">15</option>
@@ -36,9 +42,10 @@
           <option value="25">25</option>
           <option value="30">30</option>
         </select>
+        </div>
       </div>
       <div class="col-lg-4">
-        <button class="button button1"onClick="randomiseQuestion();">Generate</button>
+        <button onClick="randomiseQuestion();" class="button">Generate</button>
       </div>
     </div>
   </div>
