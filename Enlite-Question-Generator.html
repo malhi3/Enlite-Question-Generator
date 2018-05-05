@@ -43,20 +43,20 @@
     </div>
   </div>
 
+	<div id="loader" style="display: none;"></div>
+	
   <div class="container" id="questions">
     <div class="row">
-      <table width="80%" id="table" style="border-collapse: separate;">
+      <table width="80%" id="table" style="border-collapse:separate;">
       </table>
 		<div id="placeholder-text">
 			<h3>Generate some questions</h3>
 		</div>
 		<ul id="answers-list">
-			<li><button onClick="toggleAnswers();" class="button answer-buttons">Show/Hide Answers</button></li>
+			<li><button onClick="toggleAnswers();" id="toggle-button" class="button answer-buttons">Show Answers</button></li>
 		</ul>
     </div>
   </div>
-
-
 	
   <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/4.13.0/firebase-app.js"></script>

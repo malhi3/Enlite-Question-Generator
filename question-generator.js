@@ -1,21 +1,29 @@
 var storageRef = firebase.storage().ref();
 var ansDatabase = firebase.database();
 
+var imgLoadedCounter = 0;
+
+var numberField = document.getElementById("selectNumber");
+var number = numberField.value;
+
 function randomiseQuestion(){
 	var table = document.getElementById("table");
+	var loader = document.getElementById('loader');
+	
+	imgLoadedCounter = 0;
 	
 	while (table.hasChildNodes()) {   
     	table.removeChild(table.firstChild);
 	}
+	table.style.display = "none";
 	
 	var placeholder = document.getElementById("placeholder-text");
 	placeholder.style.display = "none";
 	
+	loader.style.display = "block";
+	
 	var subjectList = document.getElementById("selectSubject");
 	var subject = subjectList.options[subjectList.selectedIndex].text;
-	
-	var numberField = document.getElementById("selectNumber");
-	var number = numberField.value;
 	
 	var arr = [];
 	while(arr.length < number){
@@ -80,6 +88,7 @@ function addQuestion(increment, questionNo, parentTdId, parentTrId, incrementTdI
 		});
 		
 		question.setAttribute("src", url);
+		question.setAttribute("onload", "loaded()");
 	});
 	
 	
@@ -90,11 +99,26 @@ function addQuestion(increment, questionNo, parentTdId, parentTrId, incrementTdI
 
 function toggleAnswers(){
 	var answerElements = document.getElementsByClassName('answer');
+	var toggleButton = document.getElementById('toggle-button');
 	for (var i in answerElements) {
   		if (answerElements[i].style.display === "none") {
     		answerElements[i].style.display = 'block';
+			toggleButton.innerHTML = "Hide Answers";
   		} else {
 			answerElements[i].style.display = 'none';
+			toggleButton.innerHTML = "Show Answers";
 		}
+	}
+}
+
+function loaded(){
+	imgLoadedCounter+=1;
+	if (imgLoadedCounter==number){
+		var table = document.getElementById("table");
+		var loader = document.getElementById('loader');
+		loader.style.display = "none";
+		table.style.display = "table";
+	} else{
+		return;
 	}
 }
