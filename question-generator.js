@@ -82,20 +82,13 @@ function addQuestion(increment, questionNo, parentTdId, parentTrId, incrementTdI
 	itd.appendChild(ans);
 }
 
-function showAnswers(){
+function toggleAnswers(){
 	var answerElements = document.getElementsByClassName('answer');
 	for (var i in answerElements) {
-  		if (answerElements.hasOwnProperty(i)) {
+  		if (answerElements[i].style.display == "none") {
     		answerElements[i].style.display = 'block';
-  		}
-	}
-}
-
-function hideAnswers(){
-	var answerElements = document.getElementsByClassName('answer');
-	for (var i in answerElements) {
-  		if (answerElements.hasOwnProperty(i)) {
-    		answerElements[i].style.display = 'none';
-  		}
+  		} else {
+			answerElements[i].style.display = 'none';
+		}
 	}
 }
