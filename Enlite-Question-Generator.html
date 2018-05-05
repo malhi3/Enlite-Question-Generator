@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Paper Generator</title>
-  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="styles.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
@@ -18,44 +18,38 @@
   </div>
 
   <div class="container-fluid" id="options">
-    <div class="row">
-      <div class="col-lg-4">
-        <label for="select">Choose your subject:</label>
-        <div class="select-style">
-          <select name="subject" id="selectSubject">
+    <div class="row" id="generation-line">
+        <h2 class="top-text text-before-button">Generate a</h2>
+        <div class="select-style text-before-button">
+         <select name="subject" id="selectSubject">
           <option value="Biology">Biology</option>
           <option value="Chemistry">Chemistry</option>
           <option value="Physics">Physics</option>
-        </select>
+         </select>
         </div>
-      </div>
-
-
-      <div class="col-lg-4">
-        <label for="number">and the number of questions</label>
-        <div class="select-style">
-          <select name="number" id="selectNumber" >
+		<h2 class="top-text text-before-button">paper, with</h2>
+        <div class="select-style text-before-button" id="number-select">
+         <select name="number" id="selectNumber" >
           <option value="5">5</option>
           <option value="10">10</option>
           <option value="15">15</option>
           <option value="20">20</option>
           <option value="25">25</option>
           <option value="30">30</option>
-        </select>
+         </select>
         </div>
-      </div>
-      <div class="col-lg-4">
-        <button onClick="randomiseQuestion();" class="button">Generate</button>
-      </div>
+		<h2 class="top-text text-before-button">questions</h2>
+        <button onClick="randomiseQuestion();" class="button" id="generate-button">Generate</button>
     </div>
   </div>
 
   <div class="container" id="questions">
     <div class="row">
-      <table width="90%" id="table">
-        <tbody>
-        </tbody>
+      <table width="80%" id="table" style="border-collapse: separate;">
       </table>
+		<div id="placeholder-text">
+			<h3>Generate some questions</h3>
+		</div>
 		<ul id="answers-list">
 			<li><button onClick="toggleAnswers();" class="button answer-buttons">Show/Hide Answers</button></li>
 		</ul>

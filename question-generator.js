@@ -8,6 +8,9 @@ function randomiseQuestion(){
     	table.removeChild(table.firstChild);
 	}
 	
+	var placeholder = document.getElementById("placeholder-text");
+	placeholder.style.display = "none";
+	
 	var subjectList = document.getElementById("selectSubject");
 	var subject = subjectList.options[subjectList.selectedIndex].text;
 	
@@ -46,8 +49,10 @@ function addQuestion(increment, questionNo, parentTdId, parentTrId, incrementTdI
 		//Creating child td and incrememnt td
 		var td = document.createElement("td");
 		td.setAttribute("id", parentTdId);
+		td.setAttribute("class", "question-td");
 		var itd = document.createElement("td");
 		itd.setAttribute("id", incrementTdId);
+		itd.setAttribute("class", "number-td");
 		itd.setAttribute("valign", "top");
 		tr.appendChild(itd);
 		tr.appendChild(td);
@@ -57,12 +62,13 @@ function addQuestion(increment, questionNo, parentTdId, parentTrId, incrementTdI
 		question.setAttribute("id", "Bio"+increment);
 		
 		//Creating numbering on the side
-		var h3 = document.createElement("h3");
-		h3.innerHTML = increment+".";
+		var qnumber = document.createElement("p");
+		qnumber.setAttribute("class", "qnumber left-box");
+		qnumber.innerHTML = "Q"+increment;
 	
 	//Creating Answer Text
-	var ans = document.createElement('h3');
-	ans.setAttribute("class", "answer");
+	var ans = document.createElement('p');
+	ans.setAttribute("class", "answer left-box");
 	ans.style.display = "none";
 	
 	storageRef.child('Paper2/'+subject+'/'+subject.slice(0, 4)+questionNo+'.png').getDownloadURL().then(function(url){
@@ -78,14 +84,14 @@ function addQuestion(increment, questionNo, parentTdId, parentTrId, incrementTdI
 	
 	
 	td.appendChild(question);
-	itd.appendChild(h3);
+	itd.appendChild(qnumber);
 	itd.appendChild(ans);
 }
 
 function toggleAnswers(){
 	var answerElements = document.getElementsByClassName('answer');
 	for (var i in answerElements) {
-  		if (answerElements[i].style.display == "none") {
+  		if (answerElements[i].style.display === "none") {
     		answerElements[i].style.display = 'block';
   		} else {
 			answerElements[i].style.display = 'none';

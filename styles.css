@@ -1,24 +1,22 @@
 html *
 {
-   font-family: sans-serif;
-}
-
-h3{
-	margin: 2px 2px;
-	text-align: right;
+   font-family: Arial;
 }
 
 
 table { 
-    border-spacing: 10px;
-    border-collapse: separate;
+	border-spacing: 0 50px;
+	
+}
+
+td{
+	border: solid 1px;
 }
 
 
 #lead {
-	/*background-color: #f7f7f7;*/
+	background-color: #ffd602;
 	height: 150px;
-
 }
 
 #leadImage {
@@ -31,19 +29,21 @@ table {
 }
 
 .select-style {
-    border: 1px solid #ccc;
-    width: 120px;
-    border-radius: 3px;
+    border-bottom: 1px solid;
+	margin: 0px 10px;
+    width: 150px;
+	height: 45px;
     overflow: hidden;
-    background: #fafafa url("img/icon-select.png") no-repeat 90% 50%;
+    /*background: #fafafa url("img/icon-select.png") no-repeat 90% 50%;*/
+	font-size: 30px;
     display:inline-block;
 
 }
 
 .select-style select {
-    padding: 5px 8px;
-    width: 130%;
-    border: none;
+    width: 100%;
+	height: 100%;
+	border: none;
     box-shadow: none;
     background: transparent;
     background-image: none;
@@ -55,14 +55,24 @@ table {
     outline: none;
 }
 
+#number-select{
+	width: 40px;
+}
+
 .button {
-    background-color: #d30000;
+    background-color: #E02929;
     border: none;
     color: white;
     padding: 10px;
     font-size: 20px;
     margin: 10px 2px;
     border-radius: 20px;
+}
+
+#generate-button{
+	width: 200px;
+	border-radius: 100px;
+	margin-left: 50px;
 }
 
 #leadText {
@@ -87,4 +97,63 @@ li{
 
 .answer-buttons{
 	width: 200px;
+}
+
+.question-td{
+	border-left: none;
+	border-bottom-right-radius: 20px;
+	border-top-right-radius: 20px;
+}
+
+.number-td{
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+	background-color: rgba(255,214,2,0.51);
+}
+
+.left-box{
+	margin: 2px 2px;
+	text-align: center;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.qnumber {
+	margin: 10px;
+}
+
+.answer{
+	font-size: 30px;
+	color: #0f1f59;
+	font-family: serif;
+	font-weight: bold;
+}
+
+#placeholder-text{
+	color: #AFAFAF;
+	text-align: center;
+	
+	width: 500px;
+    height: 40px;
+
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    margin: auto;
+}
+
+.top-text{
+	padding: 2px 0;
+}
+
+#generation-line{
+	width: 950px;
+	margin: 0 auto;
+}
+
+.text-before-button{
+	margin-top: 10px;
 }
