@@ -1,6 +1,11 @@
 html *
 {
-   font-family: Open Sans;
+   font-family: sans-serif;
+}
+
+h3{
+	margin: 2px 2px;
+	text-align: right;
 }
 
 
@@ -68,4 +73,18 @@ table {
 #leadDescription {
     display: inline;
     padding-top: 70px;
+}
+
+#answers-list{
+	display: none;
+	position: fixed;
+	right: 100px;
+}
+
+li{
+	list-style: none;
+}
+
+.answer-buttons{
+	width: 200px;
 }
