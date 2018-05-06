@@ -3,9 +3,6 @@ var ansDatabase = firebase.database();
 
 var imgLoadedCounter = 0;
 
-var numberField = document.getElementById("selectNumber");
-var number = numberField.value;
-
 function randomiseQuestion(){
 	var table = document.getElementById("table");
 	var loader = document.getElementById('loader');
@@ -16,6 +13,9 @@ function randomiseQuestion(){
     	table.removeChild(table.firstChild);
 	}
 	table.style.display = "none";
+	
+	var numberField = document.getElementById("selectNumber");
+	var number = numberField.value;
 	
 	var placeholder = document.getElementById("placeholder-text");
 	placeholder.style.display = "none";
@@ -113,6 +113,8 @@ function toggleAnswers(){
 
 function loaded(){
 	imgLoadedCounter+=1;
+	var numberField = document.getElementById("selectNumber");
+	var number = numberField.value;
 	if (imgLoadedCounter==number){
 		var table = document.getElementById("table");
 		var loader = document.getElementById('loader');
