@@ -22,6 +22,12 @@ function randomiseQuestion(){
 	
 	loader.style.display = "block";
 	
+	var toggleButton = document.getElementById("toggle-button");
+	toggleButton.style.display = "none";
+	
+	var optionsText = document.getElementById("generation-line");
+	optionsText.style.width="950px";
+	
 	var subjectList = document.getElementById("selectSubject");
 	var subject = subjectList.options[subjectList.selectedIndex].text;
 	
@@ -115,13 +121,17 @@ function loaded(){
 	imgLoadedCounter+=1;
 	var numberField = document.getElementById("selectNumber");
 	var number = numberField.value;
-	var
+	
 	if (imgLoadedCounter==number){
 		var table = document.getElementById("table");
 		var loader = document.getElementById('loader');
+		var toggleButton = document.getElementById('toggle-button');
 		loader.style.display = "none";
 		table.style.display = "table";
-	} else{
+		var optionsText = document.getElementById("generation-line");
+		optionsText.style.width="1200px";
+		toggleButton.style.display = "block";
+	} else {
 		return;
 	}
 }

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Paper Generator</title>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <!--<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">-->
   <link rel="stylesheet" type="text/css" href="styles.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -47,7 +47,15 @@
          </select>
         </div>
 		<h2 class="top-text text-before-button">questions</h2>
-        <button onClick="randomiseQuestion();" class="button" id="generate-button">Generate</button>
+        <button onClick="randomiseQuestion()" class="button" id="generate-button">Generate</button>
+				<ul id="answers-list">
+			<li><button onClick="toggleAnswers();" id="toggle-button" class="button answer-buttons">Show Answers</button></li>
+			<!-- <li>Rounded switch <h3>Show Answers</h3>
+			<label class="switch">
+  				<input type="checkbox">
+  				<span class="slider round"></span>
+			</label></li>-->
+		</ul>
     </div>
   </div>
 
@@ -55,9 +63,8 @@
 	
   <div class="container" id="questions">
     <div class="row">
-		<ul id="answers-list">
-			<li><button onClick="toggleAnswers();" id="toggle-button" class="button answer-buttons">Show Answers</button></li>
-		</ul>
+
+	
       <table width="80%" id="table" style="border-collapse:separate;">
       </table>
 		<div id="placeholder-text">
@@ -83,6 +90,6 @@
     };
     firebase.initializeApp(config);
   </script>
-  <script src="question-generator.js"></script>
+  <script type="text/javascript" src="question-generator.js"></script>
 </body>
 </html>
