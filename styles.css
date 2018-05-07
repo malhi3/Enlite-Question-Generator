@@ -95,8 +95,7 @@ td{
 
 #answers-list{
 	display: none;
-	position: fixed;
-	right: 100px;
+	margin: 0 auto;
 }
 
 li{

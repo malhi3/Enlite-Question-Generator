@@ -115,6 +115,7 @@ function loaded(){
 	imgLoadedCounter+=1;
 	var numberField = document.getElementById("selectNumber");
 	var number = numberField.value;
+	var
 	if (imgLoadedCounter==number){
 		var table = document.getElementById("table");
 		var loader = document.getElementById('loader');
